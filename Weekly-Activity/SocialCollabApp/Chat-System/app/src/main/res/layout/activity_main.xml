@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:background="@color/primary"
+    tools:context=".Activities.MainActivity">
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/imageProfile"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_marginStart="@dimen/_16sdp"
+        android:layout_marginLeft="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:background="@drawable/background_icon"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:riv_corner_radius="@dimen/_8sdp" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageSignOut"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:layout_marginEnd="@dimen/_12sdp"
+        android:layout_marginRight="@dimen/_16sdp"
+        android:padding="@dimen/_6sdp"
+        android:src="@drawable/ic_logout"
+        android:tint="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:layout_marginEnd="@dimen/_8sdp"
+        android:ellipsize="end"
+        android:fontFamily="@font/google_sans_medium"
+        android:gravity="center"
+        android:maxLines="1"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_16ssp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/imageProfile"
+        app:layout_constraintEnd_toStartOf="@id/imageSignOut"
+        app:layout_constraintStart_toEndOf="@id/imageProfile"
+        app:layout_constraintTop_toTopOf="@id/imageProfile" />
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:layout_marginBottom="@dimen/_43sdp"
+        android:background="@drawable/background_content_bottom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageProfile">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/layoutSearch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_16sdp"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:layout_marginEnd="@dimen/_16sdp"
+                    android:background="@drawable/background_search"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/_16sdp"
+                    android:paddingTop="@dimen/_8sdp"
+                    android:paddingEnd="@dimen/_16sdp"
+                    android:paddingBottom="@dimen/_8sdp"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/_22sdp"
+                        android:layout_height="@dimen/_22sdp"
+                        android:src="@drawable/ic_search"
+                        android:tint="@color/primary_text" />
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:background="@null"
+                        android:hint="@string/search"
+                        android:importantForAutofill="no"
+                        android:inputType="text"
+                        android:textColor="@color/primary_text"
+                        android:textColorHint="@color/secondary_text"
+                        android:textSize="@dimen/_13ssp" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/textRecommended"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_14sdp"
+                    android:layout_marginTop="@dimen/_14sdp"
+                    android:layout_marginEnd="@dimen/_14sdp"
+                    android:text="@string/recommended"
+                    android:textColor="@color/primary_text"
+                    android:textSize="@dimen/_13ssp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@id/courseViewPager"
+                    app:layout_constraintTop_toBottomOf="@id/layoutSearch" />
+
+                <TextView
+                    android:id="@+id/textViewAll1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_14sdp"
+                    android:text="@string/view_all"
+                    android:textColor="@color/secondary_text"
+                    android:textSize="@dimen/_11ssp"
+                    app:layout_constraintBottom_toBottomOf="@id/textRecommended"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/textRecommended" />
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/courseViewPager"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_260sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:paddingStart="@dimen/_50sdp"
+                    android:paddingEnd="@dimen/_50sdp"
+                    app:layout_constraintBottom_toTopOf="@id/textTitle"
+                    app:layout_constraintTop_toBottomOf="@id/textRecommended" />
+
+                <TextView
+                    android:id="@+id/textTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_14sdp"
+                    android:layout_marginTop="@dimen/_14sdp"
+                    android:layout_marginEnd="@dimen/_14sdp"
+                    android:text="@string/browse_categories"
+                    android:textColor="@color/primary_text"
+                    android:textSize="@dimen/_13ssp"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toBottomOf="@id/courseViewPager" />
+
+                <TextView
+                    android:id="@+id/textViewAll2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_14sdp"
+                    android:text="@string/view_all"
+                    android:textColor="@color/secondary_text"
+                    android:textSize="@dimen/_11ssp"
+                    app:layout_constraintBottom_toBottomOf="@id/textTitle"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/textTitle" />
+
+
+                <androidx.constraintlayout.helper.widget.Flow
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    app:constraint_referenced_ids="cardPunch, cardWeight, cardRun, cardYoga, cardIT, cardPhoto"
+                    app:flow_horizontalGap="@dimen/_3sdp"
+                    app:flow_maxElementsWrap="2"
+                    app:flow_verticalGap="@dimen/_3sdp"
+                    app:flow_wrapMode="aligned"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/textTitle" />
+
+                <soup.neumorphism.NeumorphCardView
+                    android:id="@+id/cardPunch"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:neumorph_backgroundColor="@color/background"
+                    app:neumorph_shadowColorDark="@color/dark_shadow"
+                    app:neumorph_shadowColorLight="@color/light_shadow"
+                    app:neumorph_shadowElevation="@dimen/_3sdp"
+                    app:neumorph_shapeAppearance="@style/NeumorphismCard">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:orientation="vertical"
+                        android:padding="@dimen/_15sdp">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="@dimen/_30sdp"
+                            android:layout_height="@dimen/_30sdp"
+                            android:src="@drawable/icon_design"
+                            android:tint="@color/primary" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_4sdp"
+                            android:fontFamily="@font/google_sans_medium"
+                            android:text="Design"
+                            android:textColor="@color/primary_text"
+                            android:textSize="@dimen/_12ssp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </soup.neumorphism.NeumorphCardView>
+
+                <soup.neumorphism.NeumorphCardView
+                    android:id="@+id/cardWeight"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:neumorph_backgroundColor="@color/background"
+                    app:neumorph_shadowColorDark="@color/dark_shadow"
+                    app:neumorph_shadowColorLight="@color/light_shadow"
+                    app:neumorph_shadowElevation="@dimen/_5sdp"
+                    app:neumorph_shapeAppearance="@style/NeumorphismCard"
+                    tools:ignore="MissingConstraints">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:orientation="vertical"
+                        android:padding="@dimen/_15sdp">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="@dimen/_32sdp"
+                            android:layout_height="@dimen/_32sdp"
+                            android:src="@drawable/icon_programming"
+                            android:tint="@color/primary" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_4sdp"
+                            android:fontFamily="@font/google_sans_medium"
+                            android:text="Programming"
+                            android:textColor="@color/primary_text"
+                            android:textSize="@dimen/_12ssp"
+                            android:textStyle="bold" />
+
+
+                    </LinearLayout>
+
+                </soup.neumorphism.NeumorphCardView>
+
+                <soup.neumorphism.NeumorphCardView
+                    android:id="@+id/cardRun"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:neumorph_backgroundColor="@color/background"
+                    app:neumorph_shadowColorDark="@color/dark_shadow"
+                    app:neumorph_shadowColorLight="@color/light_shadow"
+                    app:neumorph_shadowElevation="@dimen/_5sdp"
+                    app:neumorph_shapeAppearance="@style/NeumorphismCard"
+                    tools:ignore="MissingConstraints">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:orientation="vertical"
+                        android:padding="@dimen/_15sdp">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="@dimen/_34sdp"
+                            android:layout_height="@dimen/_34sdp"
+                            android:src="@drawable/icon_yoga"
+                            android:tint="@color/primary" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_4sdp"
+                            android:fontFamily="@font/google_sans_medium"
+                            android:text="Workout"
+                            android:textColor="@color/primary_text"
+                            android:textSize="@dimen/_12ssp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </soup.neumorphism.NeumorphCardView>
+
+                <soup.neumorphism.NeumorphCardView
+                    android:id="@+id/cardYoga"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:neumorph_backgroundColor="@color/background"
+                    app:neumorph_shadowColorDark="@color/dark_shadow"
+                    app:neumorph_shadowColorLight="@color/light_shadow"
+                    app:neumorph_shadowElevation="@dimen/_5sdp"
+                    app:neumorph_shapeAppearance="@style/NeumorphismCard"
+                    tools:ignore="MissingConstraints">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:orientation="vertical"
+                        android:padding="@dimen/_15sdp">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="@dimen/_32sdp"
+                            android:layout_height="@dimen/_32sdp"
+                            android:src="@drawable/icon_hack"
+                            android:tint="@color/primary" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_4sdp"
+                            android:fontFamily="@font/google_sans_medium"
+                            android:text="Ethical Hacking"
+                            android:textColor="@color/primary_text"
+                            android:textSize="@dimen/_12ssp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </soup.neumorphism.NeumorphCardView>
+
+                <soup.neumorphism.NeumorphCardView
+                    android:id="@+id/cardIT"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:neumorph_backgroundColor="@color/background"
+                    app:neumorph_shadowColorDark="@color/dark_shadow"
+                    app:neumorph_shadowColorLight="@color/light_shadow"
+                    app:neumorph_shadowElevation="@dimen/_5sdp"
+                    app:neumorph_shapeAppearance="@style/NeumorphismCard"
+                    tools:ignore="MissingConstraints">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:orientation="vertical"
+                        android:padding="@dimen/_15sdp">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="@dimen/_33sdp"
+                            android:layout_height="@dimen/_33sdp"
+                            android:src="@drawable/icon_it"
+                            android:tint="@color/primary" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_4sdp"
+                            android:fontFamily="@font/google_sans_medium"
+                            android:text="IT Software"
+                            android:textColor="@color/primary_text"
+                            android:textSize="@dimen/_12ssp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </soup.neumorphism.NeumorphCardView>
+
+                <soup.neumorphism.NeumorphCardView
+                    android:id="@+id/cardPhoto"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:neumorph_backgroundColor="@color/background"
+                    app:neumorph_shadowColorDark="@color/dark_shadow"
+                    app:neumorph_shadowColorLight="@color/light_shadow"
+                    app:neumorph_shadowElevation="@dimen/_5sdp"
+                    app:neumorph_shapeAppearance="@style/NeumorphismCard"
+                    tools:ignore="MissingConstraints">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:orientation="vertical"
+                        android:padding="@dimen/_15sdp">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="@dimen/_32sdp"
+                            android:layout_height="@dimen/_32sdp"
+                            android:src="@drawable/icon_camera"
+                            android:tint="@color/primary" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_4sdp"
+                            android:fontFamily="@font/google_sans_medium"
+                            android:text="Photography"
+                            android:textColor="@color/primary_text"
+                            android:textSize="@dimen/_12ssp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </soup.neumorphism.NeumorphCardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+
+    </FrameLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:itemBackground="@color/white"
+        app:itemIconTint="@drawable/selector"
+        app:itemTextColor="@drawable/selector"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu="@menu/bottom_nav_menu" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

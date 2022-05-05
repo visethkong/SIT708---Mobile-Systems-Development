@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "724938996113",
+    "project_id": "socialcollab2",
+    "storage_bucket": "socialcollab2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:724938996113:android:e575ae1d32fb27d28c0230",
+        "android_client_info": {
+          "package_name": "com.example.chatsystem"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "724938996113-fp9drucdqsp5m2a6ulfb2l168a96j07s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDoqUGWmrF28AZAqOIlgH7hCUH-_wP1D2w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "724938996113-fp9drucdqsp5m2a6ulfb2l168a96j07s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
