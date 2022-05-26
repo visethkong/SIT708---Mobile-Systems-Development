@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">#6fb35e</color>
+    <color name="primary_dark">#142232</color>
+    <color name="primary_text">#3A3A3A</color>
+    <color name="secondary_text">#959494</color>
+    <color name="white">#FFFFFF</color>
+    <color name="input_background">#ECECEC</color>
+    <color name="icon_background">#20FFFFFF</color>
+    <color name="error">#B00020</color>
+    <color name="received_message_background">#494848</color>
+
+    <color name="colorPrimary">#6fb35e</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#F5B429</color>
+    <color name="darkNavyBlue">#2D4053</color>
+    <color name="green">#41882E</color>
+    <color name="lightSkyBlue">#37ABEC</color>
+    <color name="grey">#B3BCC1</color>
+    <color name="lightGrey">#dedfe0</color>
+
+    <color name="textColorBlack">#253241</color>
+    <color name="textColorGrey">#6E6A6A</color>
+    <color name="golden">#FFC107</color>
+    <color name="signInBlue">#6277FB</color>
+
+    <color name="bottomNavigationCheckedState">#6fb35e</color>
+    <color name="bottomNavigationPressedState">#6fb35e</color>
+    <color name="bottomNavigationEnabledState">#6fb35e</color>
+    <color name="bottomNavigationIdealState">#95A5A6</color>
+
+
+    <color name="nonVideoLessonBG">#273647</color>
+    <color name="loginViewText">#819595</color>
+    <color name="darkGrey">#5A5C5C</color>
+
+    <color name="cardBackground">#EFEFEF</color>
+
+    <color name="googleAccentColor1">#6fb35e</color>
+    <color name="googleAccentColor2">#4cb6c6</color>
+    <color name="googleAccentColor3">#f9d315</color>
+    <color name="googleAccentColor4">#f28c33</color>
+
+    <!--Custom colors-->
+    <color name="background">#E4EBF5</color>
+    <color name="dark_shadow">#CDD5EA</color>
+    <color name="light_shadow">#F8F9FE</color>
+    <color name="dark_icon">#212121</color>
+
+    <color name="bottom_bar_indicator_color">#D4F5FA</color>
+    <color name="bottom_bar_icon_tint">#CFD0E2</color>
+    <color name="bottom_bar_icon_tint_active">#35B7CF</color>
+    <color name="bottom_bar_text_color">#35B7CF</color>
+    <color name="primary_label">#212121</color>
+    <color name="secondary_label">#757575</color>
+    <color name="search_background">#F3F6FB</color>
+    <color name="favorite_background">#FF7173</color>
+
+    <color name="duskYellow">#FFE14A</color>
+    
+    <color name="colorMeetingInvitationStart">#5dfe60</color>
+    <color name="colorMeetingInvitationEnd">#28d1ab</color>
+
+    <color name="night_mode">#6124B1</color>
+    <color name="notifications">#13B2C3</color>
+    <color name="private_account">#E6A326</color>
+    <color name="security">#D95F69</color>
+
+
+
+</resources>
